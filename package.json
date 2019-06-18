@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require ts-node/register data/model-test.ts"
+    "test": "tsc data/model.ts && mocha --require ts-node/register data/model-test.ts"
   },
   "keywords": [],
   "author": "",

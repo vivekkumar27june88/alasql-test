@@ -70,21 +70,34 @@ const dummyData = {
 };
 
 describe('Testing | Configure Preferences', () => {
-  let cfObj: model.ConfigurationPreferences;
+  let cpo: model.ConfigurationPreferences;
 
   beforeEach(() => {
-    const cfModel: model.IConfigurePreferencesModel = JSON.parse(JSON.stringify(dummyData.configure_preferences));
-    cfObj = new model.ConfigurationPreferences(cfModel);
-    // model.printJSON(cfObj.cf);
+    const dummyCPM: model.IConfigurePreferencesModel = JSON.parse(JSON.stringify(dummyData.configure_preferences));
+    // model.printJSON(dummyCPM);
+    cpo = new model.ConfigurationPreferences(dummyCPM);
+    // model.printJSON(cpo.cpm);
   });
 
   it('should change the view side_bar_title', () => {
-    const viewId = cfObj.cf.views.ids[0];
-    let view = cfObj.getViewById(viewId);
+    const viewId = cpo.cpm.views.ids[0];
+    let view = cpo.getViewById(viewId);
     const newSideBarTitle = `${view.side_bar_title}-CHANGED`;
-    cfObj.changeSideBarTitle(viewId, newSideBarTitle);
+    cpo.changeSideBarTitle(viewId, newSideBarTitle);
 
-    view = cfObj.getViewById(viewId);
+    view = cpo.getViewById(viewId);
+
     expect(view.side_bar_title).to.equal(newSideBarTitle);
+  });
+
+  it('should change content description view->content->description', () => {
+    const viewId = cpo.cpm.views.ids[0];
+    let view = cpo.getViewById(viewId);
+    const newContentDescription = `${view.content.description}-CHANGED`;
+
+    cpo.changeContentDescription(viewId, newContentDescription);
+
+    view = cpo.getViewById(viewId);
+    expect(view.content.description).to.equal(newContentDescription);
   });
 });

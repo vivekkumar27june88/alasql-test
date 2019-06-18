@@ -116,14 +116,23 @@ export interface IConfigurePreferencesModel {
 }
 
 export class ConfigurationPreferences {
-  constructor(public cf: IConfigurePreferencesModel) {}
+  public cpm: IConfigurePreferencesModel;
+
+  constructor(cpm: IConfigurePreferencesModel) {
+    this.cpm = cpm;
+    // printJSON(cpm);
+  }
 
   getViewById(viewId: string): IViewModel {
     // TODO: VIVEK: To implement error handling.
-    return this.cf.views.entities[viewId];
+    return this.cpm.views.entities[viewId];
   }
 
   changeSideBarTitle(viewId: string, newTitle: string) {
     this.getViewById(viewId).side_bar_title = newTitle;
+  }
+
+  changeContentDescription(viewId: string, newDescription: string) {
+    this.getViewById(viewId).content.description = newDescription;
   }
 }
