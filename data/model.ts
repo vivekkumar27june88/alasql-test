@@ -118,12 +118,12 @@ export interface IConfigurePreferencesModel {
 export class ConfigurationPreferences {
   constructor(public cf: IConfigurePreferencesModel) {}
 
-  findView(viewId: string): IViewModel {
+  getViewById(viewId: string): IViewModel {
     // TODO: VIVEK: To implement error handling.
     return this.cf.views.entities[viewId];
   }
 
   changeSideBarTitle(viewId: string, newTitle: string) {
-    this.findView(viewId).side_bar_title = newTitle;
+    this.getViewById(viewId).side_bar_title = newTitle;
   }
 }

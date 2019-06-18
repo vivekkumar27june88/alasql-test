@@ -80,11 +80,11 @@ describe('Testing | Configure Preferences', () => {
 
   it('should change the view side_bar_title', () => {
     const viewId = cfObj.cf.views.ids[0];
-    let view = cfObj.findView(viewId);
+    let view = cfObj.getViewById(viewId);
     const newSideBarTitle = `${view.side_bar_title}-CHANGED`;
     cfObj.changeSideBarTitle(viewId, newSideBarTitle);
 
-    view = cfObj.findView(viewId);
+    view = cfObj.getViewById(viewId);
     expect(view.side_bar_title).to.equal(newSideBarTitle);
   });
 });
