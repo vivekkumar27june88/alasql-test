@@ -1,0 +1,118 @@
+{
+    "configure_preferences": {
+        "filter_link": "https://silogapyll.execute-api.us-east-1.amazonaws.com/dev/timeline?filter=pref",
+        "link": "https://silogapyll.execute-api.us-east-1.amazonaws.com/dev/preference",
+        "view": [
+            {
+                "title": "Privacy Settings",
+                "uuid": "uuid1",
+                "view_title": "configure_preferences",
+                "content": {
+                    "map_items": {
+                        "item3": {
+                            "isActive": false,
+                            "title": "Dont keep my data for more than 30 day"
+                        },
+                        "item2": {
+                            "isActive": false,
+                            "title": "Keep my data co-located"
+                        },
+                        "item1": {
+                            "isActive": false,
+                            "title": "Dont sell my data 3rd party agencies"
+                        }
+                    },
+                    "description": "We take Privacy seriously. Please choose your preferences and  click Save. You can change your mind and revisit your \nprivacy choices at anytime by returning to this site.",
+                    "depth": "1"
+                },
+                "side_bar_title": "Privacy Settings",
+                "view_id": "privacy_settings"
+            },
+            {
+                "title": "Consent Settings",
+                "uuid": "uuid2",
+                "view_title": "configure_preferences",
+                "content": {
+                    "map_items": {
+                        "item11": {
+                            "description": "These cookies are necessary for the website to function\n and cannot be switched off in our systems.",
+                            "map_items": {
+                                "item4": {
+                                    "isActive": false,
+                                    "title": "WooCommerce"
+                                },
+                                "item5": {
+                                    "isActive": true,
+                                    "title": "Technical Cookies"
+                                }
+                            },
+                            "title": "Neccessary Settings",
+                            "enabled": false
+                        },
+                        "item12": {
+                            "description": "Cookies used for analtical purposes.",
+                            "map_items": {
+                                "item6": {
+                                    "isActive": true,
+                                    "title": "Google Analytics",
+                                    "file_name": "analytic",
+                                    "cookies": [
+                                        {
+                                            "name": "_ga",
+                                            "path": "/",
+                                            "domain": ".nomad.test"
+                                        },
+                                        {
+                                            "name": "_gat_UA-71541312-1",
+                                            "path": "/",
+                                            "domain": ".nomad.test"
+                                        },
+                                        {
+                                            "name": "_gat_gtag_UA_134161309_1",
+                                            "path": "/",
+                                            "domain": ".nomad.test"
+                                        },
+                                        {
+                                            "name": "_gid",
+                                            "path": "/",
+                                            "domain": ".nomad.test"
+                                        }
+                                    ]
+                                }
+                            },
+                            "title": "Analytics",
+                            "enabled": true
+                        }
+                    },
+                    "description": "We use technology such as cookies on our site to personalise \ncontent, provide certain functionality, and analyse our traffic. Click \nAccept all to consent\n to the use of this technology across our site. You are able to toggle \non or off your consent preference based on \nindividual purpose for all companies listed under each section below. \nYou can change your mind and revisit your consent choices at anytime by \nreturning to this site.",
+                    "depth": "2"
+                },
+                "side_bar_title": "Consent Settings",
+                "view_id": "consent_settings"
+            },
+            {
+                "title": "Unsuscribed Settings",
+                "uuid": "uuid3",
+                "view_title": "configure_preferences",
+                "content": {
+                    "map_items": {
+                        "item8": {
+                            "isActive": true,
+                            "title": "I no longer want to receive notifications"
+                        },
+                        "item9": {
+                            "isActive": false,
+                            "title": "I want weekly list"
+                        }
+                    },
+                    "description": "We take Privacy seriously. Please choose your Unsubscribe settings \nand click Save. You can change your mind and revisit your choices at \nanytime by returning to this site.",
+                    "depth": "1"
+                },
+                "side_bar_title": "Unsuscribed Settings",
+                "view_id": "unsuscribed_settings"
+            }
+        ],
+        "title": "Preferences",
+        "form_link": "https://silogapyll.execute-api.us-east-1.amazonaws.com/dev/admin/pref/form"
+    }
+}
