@@ -70,15 +70,19 @@ function printJSON(jsonObj) {
 }
 exports.printJSON = printJSON;
 var ConfigurationPreferences = /** @class */ (function () {
-    function ConfigurationPreferences(cf) {
-        this.cf = cf;
+    function ConfigurationPreferences(cpm) {
+        this.cpm = cpm;
+        // printJSON(cpm);
     }
-    ConfigurationPreferences.prototype.findView = function (viewId) {
+    ConfigurationPreferences.prototype.getViewById = function (viewId) {
         // TODO: VIVEK: To implement error handling.
-        return this.cf.views.entities[viewId];
+        return this.cpm.views.entities[viewId];
     };
     ConfigurationPreferences.prototype.changeSideBarTitle = function (viewId, newTitle) {
-        this.findView(viewId).side_bar_title = newTitle;
+        this.getViewById(viewId).side_bar_title = newTitle;
+    };
+    ConfigurationPreferences.prototype.changeContentDescription = function (viewId, newDescription) {
+        this.getViewById(viewId).content.description = newDescription;
     };
     return ConfigurationPreferences;
 }());

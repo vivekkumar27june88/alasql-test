@@ -1,72 +1,69 @@
 const dummyData = {
   configure_preferences: {
-    filter_link:
-      "https://silogapyll.execute-api.us-east-1.amazonaws.com/dev/timeline?filter=pref",
-    link:
-      "https://silogapyll.execute-api.us-east-1.amazonaws.com/dev/preference",
+    filter_link: 'https://silogapyll.execute-api.us-east-1.amazonaws.com/dev/timeline?filter=pref',
+    link: 'https://silogapyll.execute-api.us-east-1.amazonaws.com/dev/preference',
     views: {
-      ids: ["privacy_settings", "unsubscribed_settings"],
+      ids: ['privacy_settings', 'unsubscribed_settings'],
       entities: {
         privacy_settings: {
-          title: "Privacy Settings",
-          uuid: "uuid1",
-          view_title: "configure_preferences",
+          title: 'Privacy Settings',
+          uuid: 'uuid1',
+          view_title: 'configure_preferences',
           content: {
             map_items: {
-              ids: ["item3", "item2"],
+              ids: ['item3', 'item2'],
               entities: {
                 item3: {
                   isActive: false,
-                  title: "Don't keep my data for more than 30 day"
+                  title: "Don't keep my data for more than 30 day",
                 },
                 item2: {
                   isActive: false,
-                  title: "Keep my data co-located"
+                  title: 'Keep my data co-located',
                 },
                 item1: {
                   isActive: false,
-                  title: "Don't sell my data 3rd party agencies"
-                }
-              }
+                  title: "Don't sell my data 3rd party agencies",
+                },
+              },
             },
             description:
-              "We take Privacy seriously. Please choose your preferences and  click Save. You can change your mind and revisit your \nprivacy choices at anytime by returning to this site.",
-            depth: "1"
+              'We take Privacy seriously. Please choose your preferences and  click Save. You can change your mind and revisit your \nprivacy choices at anytime by returning to this site.',
+            depth: '1',
           },
-          side_bar_title: "Privacy Settings",
-          view_id: "privacy_settings"
+          side_bar_title: 'Privacy Settings',
+          view_id: 'privacy_settings',
         },
         unsubscribed_settings: {
-          title: "Unsuscribed Settings",
-          uuid: "uuid3",
-          view_title: "configure_preferences",
+          title: 'Unsuscribed Settings',
+          uuid: 'uuid3',
+          view_title: 'configure_preferences',
           content: {
             map_items: {
-              ids: ["item8", "item9"],
+              ids: ['item8', 'item9'],
               entities: {
                 item8: {
                   isActive: true,
-                  title: "I no longer want to receive notifications"
+                  title: 'I no longer want to receive notifications',
                 },
                 item9: {
                   isActive: false,
-                  title: "I want weekly list"
-                }
-              }
+                  title: 'I want weekly list',
+                },
+              },
             },
             description:
-              "We take Privacy seriously. Please choose your Unsubscribe settings \nand click Save. You can change your mind and revisit your choices at \nanytime by returning to this site.",
-            depth: "1"
+              'We take Privacy seriously. Please choose your Unsubscribe settings \nand click Save. You can change your mind and revisit your choices at \nanytime by returning to this site.',
+            depth: '1',
           },
-          side_bar_title: "Unsubscribed Settings",
-          view_id: "unsubscribed_settings"
-        }
-      }
+          side_bar_title: 'Unsubscribed Settings',
+          view_id: 'unsubscribed_settings',
+        },
+      },
     },
-    title: "Preferences",
-    form_link:
-      "https://silogapyll.execute-api.us-east-1.amazonaws.com/dev/admin/pref/form"
-  }
+    title: 'Preferences',
+    form_link: 'https://silogapyll.execute-api.us-east-1.amazonaws.com/dev/admin/pref/form',
+  },
 };
 
 export function printJSON(jsonObj) {
@@ -135,4 +132,16 @@ export class ConfigurationPreferences {
   changeContentDescription(viewId: string, newDescription: string) {
     this.getViewById(viewId).content.description = newDescription;
   }
+
+  createMapItem(viewId: string, newMapItem: IMapItemsModel) {}
+
+  updateMapItem(viewId: string, mapItemId: string, updatedMapItem: IMapItemsModel) {}
+
+  deleteMapItem(viewId: string, mapItemId: string) {}
+
+  createView() {}
+
+  updateView() {}
+
+  deleteView() {}
 }
